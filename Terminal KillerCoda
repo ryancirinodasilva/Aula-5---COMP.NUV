@@ -12,3 +12,11 @@ No resources found in default namespace.
 
 root@controlplane:~$ kubectl create deployment web-aula5 --image=nginx:alpine
 deployment.apps/web-aula5 created
+
+root@controlplane:~$ kubectl get pods
+
+kubectl get pods -o wide
+NAME                         READY   STATUS    RESTARTS   AGE
+web-aula5-779c6f9566-pbk52   1/1     Running   0          12m
+NAME                         READY   STATUS    RESTARTS   AGE   IP              NODE     NOMINATED NODE   READINESS GATES
+web-aula5-779c6f9566-pbk52   1/1     Running   0          12m   192.168.1.105   node01   <none>           <none>
