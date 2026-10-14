@@ -31,3 +31,29 @@ kubectl get pods
 
 kubectl get pods -o wide
 
+### Prática — Passo 5: investigar o Pod
+kubectl describe pod $(kubectl get pods -o jsonpath='{.items[0].metadata.name}')
+
+### Prática — Passo 6: escalar a aplicação
+kubectl scale deployment web-aula5 --replicas=3
+
+kubectl get pods -o wide
+
+### Prática — Passo 7: acompanhar o estado
+kubectl get deployment,replicaset,pods
+
+### Prática — Passo 8: vamos causar uma falha 😈
+kubectl get pods
+
+kubectl delete pod $(kubectl get pods -o jsonpath='{.items[0].metadata.name}')
+
+kubectl get pods
+
+### Prática — Passo 9: expor a aplicação
+kubectl expose deployment web-aula5 --port=80 --target-port=80 --name=web-service
+
+kubectl get service web-service
+
+### Prática — Passo 10: testar o Service
+kubectl run teste --image=curlimages/curl --rm -it --restart=Never -- \
+  curl http://web-service
