@@ -9,3 +9,6 @@ node01         Ready    <none>          9d    v1.37.1
 
 root@controlplane:~$ kubectl get deployments
 No resources found in default namespace.
+
+root@controlplane:~$ kubectl create deployment web-aula5 --image=nginx:alpine
+deployment.apps/web-aula5 created
