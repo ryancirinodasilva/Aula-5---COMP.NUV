@@ -1,0 +1,10 @@
+Criando as 5 replicas:
+root@controlplane:~$ kubectl scale deployment web-aula5 --replicas=5
+
+kubectl get pods -o wide
+deployment.apps/web-aula5 scaled
+NAME                         READY   STATUS    RESTARTS   AGE     IP              NODE     NOMINATED NODE   READINESS GATES
+web-aula5-779c6f9566-bvvfr   1/1     Running   0          6m24s   192.168.1.149   node01   <none>           <none>
+web-aula5-779c6f9566-cdr8p   0/1     Pending   0          0s      <none>          <none>   <none>           <none>
+web-aula5-779c6f9566-qnsq8   1/1     Running   0          6m39s   192.168.1.80    node01   <none>           <none>
+web-aula5-779c6f9566-scm5c   1/1     Running   0          6m5s    192.168.1.192   node01   <none>           <none>
