@@ -102,6 +102,22 @@ replicaset.apps/web-aula5-779c6f9566   3         3         3       27m
 NAME                             READY   STATUS    RESTARTS   AGE
 pod/web-aula5-779c6f9566-fcf6n   1/1     Running   0          114s
 pod/web-aula5-779c6f9566-h6bzj   1/1     Running   0          114s
+
+
+Codigo do Passo 8:root@controlplane:~$ kubectl get pods
+
+kubectl delete pod $(kubectl get pods -o jsonpath='{.items[0].metadata.name}')
+
+kubectl get pods
+NAME                         READY   STATUS    RESTARTS   AGE
+web-aula5-779c6f9566-787z4   1/1     Running   0          19s
+web-aula5-779c6f9566-bvvfr   1/1     Running   0          19s
+web-aula5-779c6f9566-qnsq8   1/1     Running   0          34s
+pod "web-aula5-779c6f9566-787z4" deleted from default namespace
+NAME                         READY   STATUS              RESTARTS   AGE
+web-aula5-779c6f9566-bvvfr   1/1     Running             0          20s
+web-aula5-779c6f9566-qnsq8   1/1     Running             0          35s
+web-aula5-779c6f9566-scm5c   0/1     ContainerCreating   0          1s
 pod/web-aula5-779c6f9566-pbk52   1/1     Running   0          27m
 
 
