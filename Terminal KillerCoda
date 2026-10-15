@@ -128,3 +128,39 @@ kubectl get service web-service
 service/web-service exposed
 NAME          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 web-service   ClusterIP   10.104.192.25   <none>        80/TCP    0s
+
+
+Codigo do Passo 10:
+root@controlplane:~$ kubectl run teste --image=curlimages/curl --rm -it --restart=Never -- \
+  curl http://web-service
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, nginx is successfully installed and working.
+Further configuration is required for the web server, reverse proxy, 
+API gateway, load balancer, content cache, or other features.</p>
+
+<p>For online documentation and support please refer to
+<a href="https://nginx.org/">nginx.org</a>.<br/>
+To engage with the community please visit
+<a href="https://community.nginx.org/">community.nginx.org</a>.<br/>
+For enterprise grade support, professional services, additional 
+security features and capabilities please refer to
+<a href="https://f5.com/nginx">f5.com/nginx</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
+If you don't see a command prompt, try pressing enter.
+Session ended, resume using 'kubectl attach teste -c teste -n default -i -t' command
+pod "teste" deleted from default namespace
