@@ -90,3 +90,18 @@ kubectl get pods -o wide
 deployment.apps/web-aula5 scaled
 NAME                         READY   STATUS    RESTARTS   AGE   IP              NODE     NOMINATED NODE   READINESS GATES
 web-aula5-779c6f9566-pbk52   1/1     Running   0          25m   192.168.1.105   node01   <none>           <none>
+
+
+Codigo do Passo 7:
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/web-aula5   3/3     3            3           27m
+
+NAME                                   DESIRED   CURRENT   READY   AGE
+replicaset.apps/web-aula5-779c6f9566   3         3         3       27m
+
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/web-aula5-779c6f9566-fcf6n   1/1     Running   0          114s
+pod/web-aula5-779c6f9566-h6bzj   1/1     Running   0          114s
+pod/web-aula5-779c6f9566-pbk52   1/1     Running   0          27m
+
+
