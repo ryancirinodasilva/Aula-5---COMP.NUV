@@ -67,3 +67,11 @@ kubectl run teste --image=curlimages/curl --rm -it --restart=Never -- \
 • Apague um dos Pods.
 • Aguarde e confirme que o Kubernetes voltou a manter 5 Pods.
 • Mostre para a professora o resultado final.
+
+## Resumo da Aula (feito pela Prof.)
+• Kubernetes gerencia cargas de trabalho conteinerizadas.
+• Pod é a menor unidade implantável do Kubernetes.
+• Deployment declara e mantém o estado desejado da aplicação.
+• Escalabilidade horizontal aumenta ou reduz o número de réplicas.
+• Controladores permitem autorrecuperação.
+• Service oferece um ponto lógico de acesso a um conjunto de Pods.
