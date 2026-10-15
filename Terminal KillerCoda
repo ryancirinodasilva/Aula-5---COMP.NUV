@@ -121,3 +121,10 @@ web-aula5-779c6f9566-scm5c   0/1     ContainerCreating   0          1s
 pod/web-aula5-779c6f9566-pbk52   1/1     Running   0          27m
 
 
+Codigo do Passo 9:
+root@controlplane:~$ kubectl expose deployment web-aula5 --port=80 --target-port=80 --name=web-service
+
+kubectl get service web-service
+service/web-service exposed
+NAME          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+web-service   ClusterIP   10.104.192.25   <none>        80/TCP    0s
