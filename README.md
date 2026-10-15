@@ -57,3 +57,13 @@ kubectl get service web-service
 ### Prática — Passo 10: testar o Service
 kubectl run teste --image=curlimages/curl --rm -it --restart=Never -- \
   curl http://web-service
+
+
+
+## Desafio
+
+• Altere o Deployment para 5 réplicas.
+• Confirme que existem 5 Pods.
+• Apague um dos Pods.
+• Aguarde e confirme que o Kubernetes voltou a manter 5 Pods.
+• Mostre para a professora o resultado final.
